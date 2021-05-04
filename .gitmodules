@@ -4,4 +4,4 @@
 [submodule "dino"]
 	path = dino
 	url = https://github.com/soeque1/dino.git
-	branch = feature/kogpt2
+	main = feature/kogpt2
