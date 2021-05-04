@@ -23,6 +23,7 @@ cat test_input.txt
 
 ```sh
 cat task_specs/para-ko.json
+pip install -r requirements.txt
 ```
 
 ```json
