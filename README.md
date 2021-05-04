@@ -1,8 +1,24 @@
 # KoGPT2-DINO
+- KoGPT2와 Datasets from Instructions (DINO 🦕)를 이용하여 데이터를 생성하는 어플리케이션입니다.
+- 학습된 모형과 Config 등에 의해 성능은 달라질 수 있습니다.
+
+## 예시
+
+Input:
+- 문장: GPT-2는 주어진 텍스트의 다음 단어를 잘 예측할 수 있도록 학습된 언어모델입니다.
+
+Output (파인튜닝 없이 생성):
+- 동일 의미: "GPT-2는 주어진 텍스트의 다음 단어를 정확히 예측할 수 있도록 학습된 언어모델입니다."
+- 유사 의미: "GPT-2는 텍스트의 다음 단어를 예측하도록 고안된 언어모델입니다."
+- 다른 주제: "GPT-2의 첫 문장을 잘 예측할 수 있게끔 연습하십시오."
+
 
 References:
 - https://github.com/SKT-AI/KoGPT2
 - https://github.com/timoschick/dino
+
+--------------------------------
+## HOT TO USE
 
 ## Prepare
 
@@ -68,7 +84,7 @@ python dino/dino.py \
  --num_entries_per_input_and_label 1
 ```
 
-## Result
+## Results
 
 ```sh
 cat test_out/para-ko-dataset.jsonl
