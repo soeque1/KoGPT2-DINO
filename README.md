@@ -69,6 +69,7 @@ pip install -r requirements.txt
 
 ## Run
 
+- ONLY CPU
 ```sh
 python dino/dino.py \
  --output_dir test_out \
@@ -81,7 +82,46 @@ python dino/dino.py \
  --top_k 5 \
  --decay_constant 100 \
  --remove_identical_pairs \
+ --num_entries_per_input_and_label 1 \
+ --no_cuda
+```
+
+- GPU
+```
+python dino/dino.py \
+ --output_dir test_out \
+ --model_name skt/kogpt2-base-v2 \
+ --task_file task_specs/para-ko.json \
+ --input_file test_input.txt \
+ --input_file_type plain \
+ --max_output_length 128 \
+ --top_p 0.9 \
+ --top_k 5 \
+ --decay_constant 100 \
+ --remove_identical_pairs \
  --num_entries_per_input_and_label 1
+```
+
+- DOCKER (GPU)
+```
+docker run \
+  --gpus 1 \
+  -v $PWD:/workspace \
+  nvcr.io/nvidia/pytorch:20.12-py3 \
+  bash -c "
+  pip install -r requirements.txt &&
+  python dino/dino.py \
+  --output_dir test_out \
+  --model_name skt/kogpt2-base-v2 \
+  --task_file task_specs/para-ko.json \
+  --input_file test_input.txt \
+  --input_file_type plain \
+  --max_output_length 128 \
+  --top_p 0.9 \
+  --top_k 5 \
+  --decay_constant 100 \
+  --remove_identical_pairs \
+  --num_entries_per_input_and_label 1"
 ```
 
 ## Results
